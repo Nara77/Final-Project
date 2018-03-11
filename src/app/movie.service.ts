@@ -17,9 +17,10 @@ base_url: string="https://api.themoviedb.org/3/search/movie";
 //"https://api.themoviedb.org/3/search/movie?api_key=…c4ef624edcquery=potter&page=1&include_adult=false"
 //https://api.themoviedb.org/3/search/movie?api_key=eac86952cd452099f635cdc4ef624edc&language=en-US&query=potter&page=1&include_adult=false
 
-
+ movie: string;
+ 
 getData(){
-     return this.http.get(this.base_url +this.api + "query=potter&page=1&include_adult=false")
+     return this.http.get(this.base_url +this.api + "query=" + this.movie +"&page=1&include_adult=false")
       
   }
 

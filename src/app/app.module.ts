@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { MovieComponent } from './movie/movie.component';
+import {HttpClientModule } from '@angular/common/http';
+import { MovieService } from './movie.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         AboutComponent,
-        HomeComponent
+        HomeComponent,
+        MovieComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -21,9 +25,10 @@ import { AboutComponent } from "./about/about.component";
         FormsModule,
         HttpModule,
         ClarityModule,
-        ROUTING
+        ROUTING,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [MovieService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

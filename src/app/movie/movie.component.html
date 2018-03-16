@@ -1,3 +1,16 @@
 <p>
   movie works!
 </p>
+
+<app-search></app-search>
+<!-- Need to ngFor over movies results --> 
+
+<input [(ngModel)]="movies" placeholder="Search for Movie" (keyup.enter)="searchMovie(movie)">
+<button (click)="searchMovie(movie)">Search for Movie</button>
+
+<div *ngIf="data">
+    <div *ngFor="let flick of data | slice:0:9">
+        <DIV (click)="selectMovie(flick)">{{ flick.title }}</DIV>
+    </div>
+</div>
+ <app-fav></app-fav>

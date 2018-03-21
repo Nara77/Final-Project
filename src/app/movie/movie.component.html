@@ -8,10 +8,13 @@
 <button (click)="searchMovie(movieTitle)">Search for Movie</button>
 
 
-<div *ngIf="data">
+<div *ngIf="movies">
+    <p>sdfg</p>
     <!-- If you cannot search for a movie and display results in console do not work on this part-->
-    <div *ngFor="let movie of moviesTitle | slice:0:9">
-         <DIV (click)="selectMovie(movieTitle)">{{ movieTitle}}</DIV>
+    <div *ngFor="let movie of movies | slice:0:9">
+         <DIV (click)="selectMovie(movieTitle)">{{ movie.title}}</DIV>
+         <p> {{movie.vote_count}} </p>
+         
     </div>
 </div>
 

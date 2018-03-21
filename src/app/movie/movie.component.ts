@@ -10,8 +10,10 @@ export class MovieComponent implements OnInit {
   
   //fix html to match movieTitl
   movieTitle: any;
-data: any;
+  data: any ;
   savedMovie: any;
+  movies: any;
+  
  
   constructor(private _movies: MovieService) { }
   
@@ -29,11 +31,11 @@ data: any;
      succesful http response. The paremeter of that function is the response
      data. 
     */ 
-     .subscribe( response => {
+     .subscribe(( response: any )=> {
     
      //I think response that might be more useful to remember in the future.
-      this.movieTitle = response;
-       console.log(this.movieTitle)
+      this.movies = response.results;
+       console.log(this.movies)
       })
   }
   

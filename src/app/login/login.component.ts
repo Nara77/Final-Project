@@ -17,8 +17,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   loginSubmit(){
+     this._user.login(this.user)
+   
+     .subscribe(( response: any )=> {
     
-    console.log (this.user)
+    
+    
+       console.log(this.user,response)
+      })
+  }
+  
       }
   
-}
+

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from '@clr/angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
+import { UserService } from './user.service';
 
 import { AboutComponent } from "./about/about.component";
 import { MovieComponent } from './movie/movie.component';
@@ -33,8 +34,9 @@ import { LoginComponent } from './login/login.component';
         ClarityModule,
         ROUTING,
         HttpClientModule
+    
     ],
-    providers: [MovieService],
+    providers: [MovieService, UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+
+
+<h2>Please Login</h2>
+
+
+    <input class="email" 
+              type="text" 
+              placeholder="Email"
+               name="email"
+              [(ngModel)]="user.email">
+    
+    <input class="password" 
+      type="password" 
+      placeholder="Password"
+      [(ngModel)]="user.password"
+      name="password">
+              
+<button class="btn btn-success" (click)="loginSubmit()">Submit</button>

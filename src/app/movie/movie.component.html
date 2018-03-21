@@ -3,14 +3,17 @@
 </p>
 
 <app-search></app-search>
-<!-- Need to ngFor over movies results --> 
+<input [(ngModel)]="movieTitle"  placeholder="Search for Movie" 
+(keyup.enter)="searchMovie(movieTitle)">
+<button (click)="searchMovie(movieTitle)">Search for Movie</button>
 
-<input [(ngModel)]="movies" placeholder="Search for Movie" (keyup.enter)="searchMovie(movie)">
-<button (click)="searchMovie(movie)">Search for Movie</button>
 
 <div *ngIf="data">
-    <div *ngFor="let flick of data | slice:0:9">
-        <DIV (click)="selectMovie(flick)">{{ flick.title }}</DIV>
+    <!-- If you cannot search for a movie and display results in console do not work on this part-->
+    <div *ngFor="let movie of moviesTitle | slice:0:9">
+         <DIV (click)="selectMovie(movieTitle)">{{ movieTitle}}</DIV>
     </div>
 </div>
+
+
  <app-fav></app-fav>

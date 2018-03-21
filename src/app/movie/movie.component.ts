@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -7,17 +7,15 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-   
- 
+  
+  //fix html to match movieTitl
+  movieTitle: any;
 data: any;
   savedMovie: any;
-  movies: any;
+ 
   constructor(private _movies: MovieService) { }
   
-  
-
-
-ngOnInit() {
+  ngOnInit() {
     // this._movie.getData("Fight Club").subscribe(data => console.log(data))
   }
 
@@ -25,16 +23,17 @@ ngOnInit() {
  
  
   searchMovie(movies){
-    this._movies.getData(movies)
+     // console.log(this.movies)
+   this._movies.getData(movies)
     /*Subscribe method, the first argument is the function to invoke on
      succesful http response. The paremeter of that function is the response
      data. 
     */ 
      .subscribe( response => {
-     //console.log(response)
+    
      //I think response that might be more useful to remember in the future.
-      this.movies = response;
-       console.log(this.movies)
+      this.movieTitle = response;
+       console.log(this.movieTitle)
       })
   }
   

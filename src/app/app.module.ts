@@ -6,22 +6,24 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from '@clr/angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
-import { HomeComponent } from "./home/home.component";
+
 import { AboutComponent } from "./about/about.component";
 import { MovieComponent } from './movie/movie.component';
 import {HttpClientModule } from '@angular/common/http';
 import { MovieService } from './movie.service';
 import { SearchComponent } from './search/search.component';
 import { FavComponent } from './fav/fav.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AboutComponent,
-        HomeComponent,
+    
         MovieComponent,
         SearchComponent,
-        FavComponent
+        FavComponent,
+        LoginComponent
     ],
     imports: [
         BrowserAnimationsModule,

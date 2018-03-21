@@ -7,6 +7,7 @@ import { ClarityModule } from '@clr/angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
 import { UserService } from './user.service';
+import { RegisterService } from './register.service';
 
 import { AboutComponent } from "./about/about.component";
 import { MovieComponent } from './movie/movie.component';
@@ -15,6 +16,7 @@ import { MovieService } from './movie.service';
 import { SearchComponent } from './search/search.component';
 import { FavComponent } from './fav/fav.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +26,8 @@ import { LoginComponent } from './login/login.component';
         MovieComponent,
         SearchComponent,
         FavComponent,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -36,7 +39,7 @@ import { LoginComponent } from './login/login.component';
         HttpClientModule
     
     ],
-    providers: [MovieService, UserService],
+    providers: [MovieService, UserService, RegisterService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

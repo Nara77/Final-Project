@@ -10,5 +10,6 @@ export class UserService {
  login(user){
     return this._http.post(this.baseUrl + "login",user)
  }
+ 
   
 }

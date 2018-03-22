@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
      .subscribe(( response: any )=> {
       this.router.navigate([`/movie`]);
     
-
         console.log(this.user,response)
+         sessionStorage.setItem('token', response.token);
+        sessionStorage.setItem('userId', response.userId);
         
       })
   }

@@ -19,7 +19,8 @@ export const ROUTES: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'movie', component: MovieComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent}
+    {path: 'register', component: RegisterComponent},
+
     
 ];
 

@@ -1,6 +1,12 @@
 <p>
-    favorites works!
+    My Faves!
 </p>
 <ol *ngIf="favorites">
-    <li *ngFor="let movie of favorites">{{movie.title}}</li>
+    <li *ngFor="let movie of favorites">{{MovieTitle}}
+        {{ movie.title}}
+  <div>   
+     <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}">
+     </div>
+    </li>
 </ol>
+

@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-movie',
@@ -13,15 +14,26 @@ export class MovieComponent implements OnInit {
   data: any ;
   savedMovie: any;
   movies: any;
+   results: object;
+   searchTerm$ = new Subject<string>();
   
  
-  constructor(private _movies: MovieService) { }
+  constructor(private _movies: MovieService) {
+      
+      this.updateResults();
+  }
   
   ngOnInit() {
     // this._movie.getData("Fight Club").subscribe(data => console.log(data))
   }
 
-
+ updateResults() {
+    this._movies.search(this.searchTerm$)
+      .subscribe(results => {
+        this.results = results["results"];
+      });
+    console.log(this._movies.savedMovies);
+  }
  
  
   searchMovie(movies){
@@ -33,24 +45,20 @@ export class MovieComponent implements OnInit {
     */ 
      .subscribe(( response: any )=> {
     
-     //I think response that might be more useful to remember in the future.
+    
       this.movies = response.results;
        console.log(this.movies)
       })
   }
   
-  /*  .subscribe pattern
-  
-  that param name does not matter, it is just the variable name for the response data
-   .subscribe( param => )
-  
-  */
-  
-  
-  
-  selectMovie(saver){
+
+
+ selectMovie(saver){
     this.savedMovie = saver;
+    this._movies.savedMovies.push(this.savedMovie);
     console.log(this.savedMovie.title +" has been saved")
     console.log(this.savedMovie)
+    this.updateResults();
   }
+  
 }

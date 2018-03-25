@@ -13,7 +13,7 @@ import { AboutComponent } from "./about/about.component";
 import { MovieComponent } from './movie/movie.component';
 import {HttpClientModule } from '@angular/common/http';
 import { MovieService } from './movie.service';
-import { SearchComponent } from './search/search.component';
+
 import { FavComponent } from './fav/fav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -24,7 +24,6 @@ import { RegisterComponent } from './register/register.component';
         AboutComponent,
     
         MovieComponent,
-        SearchComponent,
         FavComponent,
         LoginComponent,
         RegisterComponent

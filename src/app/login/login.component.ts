@@ -13,6 +13,13 @@ export class LoginComponent implements OnInit {
     email: "blabla@gmail.com",
     password: "blabla1"
   };
+  
+  
+  userA: any = {
+  title: "aitanic",
+  genre: "none"
+  
+};
   constructor( public _user: UserService, private router: Router) {}
 
   ngOnInit() {}
@@ -28,7 +35,17 @@ export class LoginComponent implements OnInit {
         
       })
   }
-  
+ 
+ 
+
  }
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
   
 

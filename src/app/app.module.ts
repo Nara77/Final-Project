@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
 import { UserService } from './user.service';
 import { RegisterService } from './register.service';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from "./about/about.component";
 import { MovieComponent } from './movie/movie.component';
 import {HttpClientModule } from '@angular/common/http';
@@ -35,7 +35,8 @@ import { RegisterComponent } from './register/register.component';
         HttpModule,
         ClarityModule,
         ROUTING,
-        HttpClientModule
+        HttpClientModule,
+        NgbModule.forRoot(),
     
     ],
     providers: [MovieService, UserService, RegisterService],

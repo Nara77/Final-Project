@@ -15,11 +15,7 @@ export class LoginComponent implements OnInit {
   };
   
   
-  userA: any = {
-  title: "aitanic",
-  genre: "none"
   
-};
   constructor( public _user: UserService, private router: Router) {}
 
   ngOnInit() {}

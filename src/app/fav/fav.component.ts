@@ -10,11 +10,7 @@ import { UserService } from '../user.service';
 })
 export class FavComponent implements OnInit {
   
-  userA: any = {
-  title: "aitanic",
-  genre: "none"
-  
-};
+ 
   
   
   @Input() favorites;
@@ -28,17 +24,7 @@ export class FavComponent implements OnInit {
   }
 
 
- relationsSubmit(){
-     this._user.relations(this.userA)
-     .subscribe(( response: any )=> {
-         console.log(this.userA,response)
-         
-         
-         
-     })
 
-
- }
 
 
 }

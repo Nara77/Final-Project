@@ -17,11 +17,14 @@ import { MovieService } from './movie.service';
 import { FavComponent } from './fav/fav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
     declarations: [
         AppComponent,
         AboutComponent,
+        
     
         MovieComponent,
         FavComponent,
@@ -36,10 +39,10 @@ import { RegisterComponent } from './register/register.component';
         ClarityModule,
         ROUTING,
         HttpClientModule,
-        NgbModule.forRoot(),
+        NgbModule.forRoot()
     
     ],
-    providers: [MovieService, UserService, RegisterService],
+    providers: [MovieService, UserService, RegisterService,NgbCarouselConfig],
     bootstrap: [AppComponent]
 })
 export class AppModule {

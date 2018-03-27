@@ -16,8 +16,12 @@ export class UserService {
  
  
  relations (userA){
-  
-  return this._http.post(this.baseUrl + this.userId + "/movies" + this.token ,userA)
+    let token = sessionStorage.getItem('token');
+   let userId =  sessionStorage.getItem('userId');
+
+console.log ( this.baseUrl + userId + "/movies" + token ,userA , "lalal" )
+   return this._http.post(this.baseUrl + userId + "/movies"+ "?access_token=" + token ,userA)
+   
   
  }
   

@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { Subject } from 'rxjs/Subject';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-movie',
@@ -16,9 +17,16 @@ export class MovieComponent implements OnInit {
   movies: any;
    results: object;
    searchTerm$ = new Subject<string>();
+   
+   
+    userA: any = {
+  title: "pppppitanic",
+  genre: "none"
+  
+};
   
  
-  constructor(private _movies: MovieService) {
+  constructor(private _movies: MovieService, public _user: UserService) {
       
       this.updateResults();
   }
@@ -51,14 +59,22 @@ export class MovieComponent implements OnInit {
       })
   }
   
+    
 
 
- selectMovie(saver){
-    this.savedMovie = saver;
-    this._movies.savedMovies.push(this.savedMovie);
-    console.log(this.savedMovie.title +" has been saved")
-    console.log(this.savedMovie)
-    this.updateResults();
+
+
+ selectMovie(movie){
+    this._movies.savedMovies.push(movie);
+        delete movie.id;
+     this._user.relations(movie)
+     .subscribe(( response: any )=> {
+         console.log(this.userA,response)
+    
+     })
+ 
+     
+ }
+    
   }
   
-}

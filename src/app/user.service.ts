@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
     
  constructor(private _http: HttpClient) { }
+ 
+ 
  baseUrl: string = "http://nardos-spring-2018-phortonssf.c9users.io:8080/api/appUsers/";
  userId: string = "5ab2b89f91b701287f229b0b"
  token : string ="?access_token=XrZgcuHJDksHCezBqckDlGfZsWVqAp3WxZcP0w4HXuGsLzjUQSux8hlDFYiSRWgr"

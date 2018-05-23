@@ -18,6 +18,8 @@ import { FavComponent } from './fav/fav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { LogOutComponent } from './log-out/log-out.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
         MovieComponent,
         FavComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        LogOutComponent,
+        LogoutComponent
     ],
     imports: [
         BrowserAnimationsModule,

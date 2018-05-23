@@ -16,7 +16,7 @@ export class MovieComponent implements OnInit {
   savedMovie: any;
   movies: any;
    results: object;
-   searchTerm$ = new Subject<string>();
+   searchTerm$: any;
    
    
     userA: any = {
@@ -69,8 +69,7 @@ export class MovieComponent implements OnInit {
         delete movie.id;
      this._user.relations(movie)
      .subscribe(( response: any )=> {
-         console.log(this.userA,response)
-    
+
      })
  
      

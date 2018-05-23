@@ -21,6 +21,7 @@ api: string = "?api_key=eac86952cd452099f635cdc4ef624edc";
 base_url: string="https://api.themoviedb.org/3/search/movie";
 savedMovies: any = [];
  options: string = "&page=1&include_adult=false;";
+ term: string;
   
   
   
@@ -51,12 +52,11 @@ savedMovies: any = [];
  // savedMovies: any = [];
  // constructor(private http: HttpClient) {  }
  
- search(term) {
-    return term.debounceTime(400)
-     .distinctUntilChanged()
+ search(terms: Observable<string>) {
+    return terms.debounceTime(400)
+      .distinctUntilChanged()
       .switchMap(term => this.searchEntries(term));
   }
-
   searchEntries(term) {
 
    

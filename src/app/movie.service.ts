@@ -52,11 +52,14 @@ savedMovies: any = [];
  // savedMovies: any = [];
  // constructor(private http: HttpClient) {  }
  
- search(terms: Observable<string>) {
+ search(terms) {
+     console.log('Terms:', terms)
     return terms.debounceTime(400)
-      .distinctUntilChanged()
+   .distinctUntilChanged()
       .switchMap(term => this.searchEntries(term));
   }
+  
+  
   searchEntries(term) {
 
    

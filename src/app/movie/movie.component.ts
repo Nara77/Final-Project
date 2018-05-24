@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { Subject } from 'rxjs/Subject';
 import { UserService } from '../user.service';
+import { LogoutService } from '../logout.service';
 
 @Component({
   selector: 'app-movie',
@@ -26,9 +27,9 @@ export class MovieComponent implements OnInit {
 };
   
  
-  constructor(private _movies: MovieService, public _user: UserService) {
+  constructor(private _movies: MovieService, public _user: UserService,  public _logout:LogoutService) {
       
-      this.updateResults();
+      //this.updateResults();
   }
   
   ngOnInit() {
@@ -36,7 +37,9 @@ export class MovieComponent implements OnInit {
   }
 
  updateResults() {
+    
     this._movies.search(this.searchTerm$)
+
       .subscribe(results => {
         this.results = results["results"];
       });
@@ -74,6 +77,13 @@ export class MovieComponent implements OnInit {
  
      
  }
+ 
+  logOut () {
+       this._logout.logouT()
+   }
+
+ 
+ 
     
   }
   

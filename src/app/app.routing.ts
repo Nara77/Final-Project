@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from './about/about.component';
 
-import { MovieComponent} from './movie/movie.component'
+import { MovieComponent} from './movie/movie.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 

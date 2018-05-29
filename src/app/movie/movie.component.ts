@@ -78,9 +78,9 @@ export class MovieComponent implements OnInit {
      
  }
  
-  logOut () {
-       this._logout.logouT()
-   }
+//   logOut () {
+//       this._logout.logouT()
+//   }
 
  
  

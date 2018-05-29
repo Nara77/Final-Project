@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LogoutService } from '../logout.service';
 
 
 @Component({
@@ -17,23 +18,28 @@ export class LoginComponent implements OnInit {
   
   
   
-  constructor( public _user: UserService, private router: Router) {}
+  constructor( public _user: UserService, private router: Router, public _logout:LogoutService) {}
 
   ngOnInit() {}
 
   loginSubmit(){
      this._user.login(this.user)
      .subscribe(( response: any )=> {
-      this.router.navigate([`/movie`]);
+        this._user.isLoggedIn = true;
+      this.router.navigate([`/about`]);
+      
+      
     
         console.log(this.user,response)
          sessionStorage.setItem('token', response.token);
         sessionStorage.setItem('userId', response.userId);
         
+        
       })
   }
  
  
+   
 
  }
  

@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { MovieComponent} from './movie/movie.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {FavComponent } from './fav/fav.component';
 
 
 export const ROUTES: Routes = [
@@ -20,7 +21,7 @@ export const ROUTES: Routes = [
     {path: 'movie', component: MovieComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
-
+    {path: 'fav', component: FavComponent},
     
 ];
 

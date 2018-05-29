@@ -1,4 +1,4 @@
-<button class="btn btn-success" (click)="logOut()">LogOut</button>
+
 
 
 
@@ -12,11 +12,10 @@
     <!-- If you cannot search for a movie and display results in console do not work on this part-->
     <div *ngFor="let movie of movies | slice:0:9">
          <div>{{ movie.title}} </div>
-         <p> {{movie.vote_count}} </p>
          
          <img *ngIf = "movie.poster_path"         src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{movie.poster_path}}">
 
- 
+         <p> {{movie.overview}} </p>
 
   <button (click)="selectMovie(movie)"> Select for Movie</button>
   

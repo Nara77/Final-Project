@@ -4,8 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class UserService {
     
+isLoggedIn:boolean=false;
+    
  constructor(private _http: HttpClient) { }
  
+
  
  baseUrl: string = "http://nardos-spring-2018-phortonssf.c9users.io:8080/api/appUsers/";
  userId: string = "5ab2b89f91b701287f229b0b"
@@ -13,6 +16,7 @@ export class UserService {
 
  currentUser: any = {};
  login(user){
+     
     return this._http.post(this.baseUrl + "login",user)
  }
  
@@ -26,6 +30,11 @@ console.log ( this.baseUrl + userId + "/movies" + token ,userA , "lalal" )
    
   
  }
+  
+  
+  
+  
+  
   
 }
 

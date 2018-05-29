@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import { LogoutService } from './logout.service';
+ import { PopularService } from './popular.service';
 
 
 
@@ -45,7 +46,7 @@ import { LogoutService } from './logout.service';
         NgbModule.forRoot()
     
     ],
-    providers: [MovieService, UserService, RegisterService,NgbCarouselConfig,LogoutService],
+    providers: [MovieService, UserService, RegisterService, NgbCarouselConfig, LogoutService, PopularService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

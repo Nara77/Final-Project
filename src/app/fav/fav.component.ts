@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { UserService } from '../user.service';
-import { LogoutService } from '../logout.service';
+
  
 
 @Component({
@@ -17,7 +17,7 @@ export class FavComponent implements OnInit {
   @Input() favorites;
   
 
-  constructor(private _movie: MovieService, public _user: UserService,  public _logout:LogoutService) { }
+  constructor(private _movie: MovieService, public _user: UserService,) { }
 
 
   ngOnInit() {
@@ -25,9 +25,7 @@ export class FavComponent implements OnInit {
   }
 
 
- logOut () {
-       this._logout.logouT()
-   }
+
 
 
 }

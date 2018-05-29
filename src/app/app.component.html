@@ -3,7 +3,7 @@
     <div class="branding">
       <a href="#" class="nav-link">
         <span class="clr-icon clr-clarity-logo"></span>
-        <span class="title">Clarity</span>
+        <span class="title">Click Experience</span>
       </a>
     </div>
       <div class="header-nav" [clr-nav-level]="1">
@@ -11,8 +11,19 @@
           <a class="nav-link" href="#" [routerLink]="['/login']" routerLinkActive="active"><span class="nav-text">Login</span></a>
           <a class="nav-link" href="#" [routerLink]="['/about']" routerLinkActive="active"><span class="nav-text">About</span></a>
           <a class="nav-link" href="#" [routerLink]="['/movie']" routerLinkActive="active"><span class="nav-text">Movie</span></a>
+           <a class="nav-link" href="#" [routerLink]="['/fav']" routerLinkActive="active"><span class="nav-text">Faves</span></a>
+        </div>
+          
         
-      </div>
+    
+        
+        
+          
+          
+          <button [disabled]="!this._user.isLoggedIn"(click)="logOut()">LogOut</button>
+      
+        
+      
     <div class="header-actions">
     </div>
   </clr-header>

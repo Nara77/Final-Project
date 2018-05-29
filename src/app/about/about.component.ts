@@ -1,11 +1,8 @@
-/*
- * Copyright (c) 2016 VMware, Inc. All Rights Reserved.
- * This software is released under MIT license.
- * The full license information can be found in LICENSE in the root directory of this project.
- */
+
 import {Component, OnInit} from '@angular/core';
 import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
+import { PopularService } from '../popular.service';
 
 
 @Component({
@@ -17,7 +14,11 @@ import {HttpClient} from '@angular/common/http';
 export class AboutComponent  implements OnInit {
   images: Array<string>;
 
-  constructor( private _http: HttpClient) {
+
+film:any;
+
+  constructor( private _http: HttpClient, public _popular:PopularService) {
+      this.latest();
    
   }
 
@@ -25,6 +26,15 @@ export class AboutComponent  implements OnInit {
     
   }
 
- 
+ latest () {
+     
+ this._popular.getPop()
+     .subscribe(( response: any )=> {
+        this.film = response.results;
+            console.log(this.film)
+    
+     })
   
+}
+
 }
